@@ -22,6 +22,10 @@ app.get('/api/getLetra/:num', (req, res) => {
     }
 })
 
+app.get('/api/getPalabra/:num', (req, res) => {
+    let num 
+})
+
 const PORT = 8080
 const server = app.listen(PORT, () => {
     console.log(`Servidor escuchando en el puerto ${server.address().port}`)
