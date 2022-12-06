@@ -23,7 +23,18 @@ app.get('/api/getLetra/:num', (req, res) => {
 })
 
 app.get('/api/getPalabra/:num', (req, res) => {
-    let num 
+    let num = parseInt(req.params.num)
+
+    if(!isNaN(num)){
+        let palabras = frase.split(' ')
+        if(num >= 1 && num <= frase.length){
+            res.send(palabras[num-1])
+        } else {
+            res.send({error : "El parametro esta fuera de rango"})
+        }
+    } else {
+        res.send({error : "El parametro ingresado no es un numero"})
+    }
 })
 
 const PORT = 8080
